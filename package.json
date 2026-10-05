@@ -1,0 +1,17 @@
+{
+  "name": "dreamscript-academy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Interactive, zero-build academy that teaches DreamScript from a first line of prose to lucid programs.",
+  "scripts": {
+    "start": "node serve.js",
+    "share": "node share.mjs",
+    "test": "node --test",
+    "test:ui": "node tests/ui-check.mjs",
+    "dream": "node bin/dream.js"
+  },
+  "bin": {
+    "dream": "bin/dream.js"
+  }
+}

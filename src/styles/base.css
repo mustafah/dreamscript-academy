@@ -1,0 +1,120 @@
+:root {
+  --bg: #14112b;
+  --bg-2: #1b1641;
+  --panel: rgba(28, 24, 59, 0.82);
+  --panel-2: rgba(36, 31, 72, 0.95);
+  --border: rgba(202, 191, 255, 0.14);
+  --border-strong: rgba(202, 191, 255, 0.24);
+  --text: #edeaff;
+  --muted: #bcb7de;
+  --soft: #938db8;
+  --violet: #b362ff;
+  --amber: #ffc857;
+  --mint: #7dffb3;
+  --teal: #5eead4;
+  --pink: #ff6b9d;
+  --danger: #ff808f;
+  --shadow: 0 24px 64px rgba(8, 8, 24, 0.42);
+  --radius: 14px;
+  --code: ui-monospace, "JetBrains Mono", Menlo, monospace;
+  color-scheme: dark;
+  font-family: Inter, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); }
+body {
+  background-image:
+    radial-gradient(circle at 20% 18%, rgba(179, 98, 255, 0.18), transparent 28%),
+    radial-gradient(circle at 82% 0%, rgba(94, 234, 212, 0.12), transparent 24%),
+    radial-gradient(circle at 50% 120%, rgba(255, 107, 157, 0.12), transparent 35%),
+    radial-gradient(circle at 15% 80%, rgba(255, 200, 87, 0.075) 1px, transparent 1.4px),
+    radial-gradient(circle at 60% 20%, rgba(255,255,255,0.07) 1px, transparent 1.2px),
+    radial-gradient(circle at 90% 60%, rgba(255,255,255,0.05) 1px, transparent 1.2px),
+    linear-gradient(180deg, #15112c 0%, #171437 35%, #14112b 100%);
+  background-size: auto, auto, auto, 180px 180px, 240px 240px, 280px 280px, auto;
+}
+a { color: inherit; }
+button, input, textarea { font: inherit; }
+button {
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.055);
+  color: var(--text);
+  border-radius: 13px;
+  padding: 0.7rem 0.95rem;
+  cursor: pointer;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
+}
+button:hover { border-color: rgba(179, 98, 255, 0.48); background: rgba(255,255,255,0.09); }
+button:active { transform: translateY(1px); }
+button:disabled { opacity: .45; cursor: not-allowed; box-shadow: none; }
+button:focus-visible, .tab-button:focus-visible, .map-lesson:focus-visible, .value-link:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+pre, code, .mono { font-family: var(--code); }
+.card, .glass {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+.muted { color: var(--muted); }
+.soft { color: var(--soft); }
+.hidden { display: none !important; }
+.pill, .chip-inline, .choice-pill, .kind-chip, .origin-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .3rem .68rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.06);
+  font-size: .82rem;
+}
+.chip-inline { width: fit-content; background: rgba(179, 98, 255, 0.08); }
+.ghost-button { background: rgba(255,255,255,0.03); }
+.primary-button {
+  background: linear-gradient(135deg, rgba(179,98,255,.24), rgba(125,255,179,.18));
+  border-color: rgba(179,98,255,.36);
+}
+.small-button { padding: .46rem .72rem; font-size: .88rem; }
+.icon-button { padding: .72rem; min-width: 2.9rem; }
+.inline-swatch {
+  display: inline-block;
+  width: .86rem;
+  height: .86rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.35);
+  vertical-align: -.1rem;
+  margin-inline-end: .35rem;
+}
+.celebrate { animation: glow-pop .7s ease; }
+@keyframes glow-pop {
+  0% { box-shadow: 0 0 0 rgba(125,255,179,0); }
+  50% { box-shadow: 0 0 0 8px rgba(125,255,179,0.08), var(--shadow); }
+}
+.pulse-next { animation: pulse-next 1.4s ease-in-out infinite; }
+@keyframes pulse-next {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(125,255,179,0.08); }
+  50% { box-shadow: 0 0 0 7px rgba(125,255,179,0.04); border-color: rgba(125,255,179,0.45); }
+}
+.sparkles { position: relative; overflow: hidden; }
+.sparkles::after {
+  content: "✦ ✧ ✦";
+  position: absolute;
+  top: .7rem;
+  inset-inline-end: 1rem;
+  color: var(--amber);
+  opacity: .85;
+  letter-spacing: .35rem;
+  animation: twinkle 1.4s ease;
+}
+@keyframes twinkle {
+  0% { transform: translateY(8px) scale(.85); opacity: 0; }
+  40% { opacity: .9; }
+  100% { transform: translateY(-4px) scale(1.06); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

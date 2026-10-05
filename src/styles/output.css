@@ -1,0 +1,39 @@
+.editor-host .monaco-editor,
+.editor-host textarea,
+.editor-host > div {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+.editor-host textarea {
+  resize: none;
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.1);
+  background: rgba(8, 9, 24, .72);
+  color: var(--text);
+  font: 15px/1.6 var(--code);
+}
+.editor-host:focus-within,
+.output-shell:focus-within,
+.lesson-pane:focus-within,
+.editor-shell:focus-within {
+  box-shadow: 0 0 0 1px rgba(125,255,179,.25), var(--shadow);
+}
+.monaco-line-note { color: rgba(233,230,255,.38); font-style: italic; }
+.monaco-swatch { width: 9px !important; height: 9px !important; margin-inline-end: 6px; border-radius: 999px; border: 1px solid rgba(255,255,255,.45); }
+.output-body { min-height: 0; }
+.output-scroll { overflow: auto; min-height: 0; min-width: 0; flex: 1; padding: 0 1rem 1rem; }
+.diagnostic-item[data-severity='error'] { border-color: rgba(255,128,143,.3); }
+.diagnostic-item[data-severity='warning'] { border-color: rgba(255,200,87,.22); }
+.problem-icon { width: 1.6rem; text-align: center; }
+.probability { color: var(--muted); font-size: .9rem; }
+.hood-node { display: grid; gap: .35rem; padding-inline-start: .8rem; border-inline-start: 1px solid rgba(255,255,255,.08); }
+.hood-k { color: var(--soft); }
+.hood-v-string { color: var(--mint); }
+.hood-v-number { color: var(--pink); }
+.hood-v-bool { color: var(--amber); }
+.hood-v-null { color: var(--muted); }
+.hood-v-keyword { color: var(--violet); }
+.all-dreams button { text-align: start; width: 100%; }
+.all-dreams button.active { border-color: rgba(125,255,179,.35); }
